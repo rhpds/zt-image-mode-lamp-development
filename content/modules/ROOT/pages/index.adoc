@@ -51,10 +51,8 @@ If you don't have a Red Hat account, you can create one at https://sso.redhat.co
 
 **Total time:** Approximately 30 minutes
 
-* Authentication and setup: 5 minutes
-* Building and configuring LAMP container: 10 minutes
-* Creating application files: 10 minutes
-* Testing and validation: 5 minutes
+* **Module 1:** Build and Run LAMP Container (~15 minutes)
+* **Module 2:** Configure LAMP Application (~15 minutes)
 
 == Lab Environment
 
