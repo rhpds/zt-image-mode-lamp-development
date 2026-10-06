@@ -1,0 +1,97 @@
+# Publishing House — Project Spec
+# Lifecycle: intake → content_review → infra_review → jira_sync → development → ready → published
+
+project:
+  slug: "zt-image-mode-lamp-development"
+  owner_email: "brthomas@redhat.com"
+  content_type: "lab"
+  deployment_mode: "self_published"
+  initiative_key: "none"
+  showroom_type: "zero_touch"
+  intake_type: "new"
+  automation_type: "ansible"
+  description: "Build a database-backed LAMP application using containers and volume mounts for iterative development. Part 1 of 2-lab series on Image Mode for application developers."
+  jira_ticket: ""
+  workflow_id: ""
+
+spec:
+  title: "Build a LAMP Application Development Container"
+  learning_objectives:
+    - "Authenticate to Red Hat Container Registry using podman login"
+    - "Build a LAMP (Linux, Apache, MariaDB, PHP) application development environment using RHEL UBI containers"
+    - "Configure MariaDB databases with initialization scripts"
+    - "Deploy PHP applications with Apache in containerized environments"
+    - "Use volume mounts for iterative application development"
+  modules:
+    - id: module-01
+      title: "Build LAMP Development Container"
+      duration_min: 30
+      status: not_started
+  environment:
+    platform: "rhel-vms"
+    topology: "per-student"
+    cloud_provider: cnv
+    max_concurrent_users: null
+
+    # VM configuration
+    vms_per_student:
+      - role: "buildhost"
+        count: 1
+        cpu: 8
+        ram_gb: 16
+        disk_gb: 150
+        os: "rhel-10"
+
+    # Common fields
+    aap_version: ""
+    ai_requirement: "none"
+    ai_model_tier: ""
+    ai_model_name: ""
+    ai_justification: ""
+    non_ga_products: []
+    non_ga_access_plan: ""
+    external_services:
+      - "registry.redhat.io"
+    gpu_nodes: 0
+    gpu_type: ""
+
+  duration_hours: 0.5
+  audience: "beginner"
+
+development:
+  automation:
+    ansible:
+      status: not_started
+  e2e:
+    status: not_started
+  healthCheck:
+    status: not_started
+
+compliance:
+  last_hard_check: null
+  hard_result: null
+
+tracking:
+  paused: false
+  pause_reason: null
+
+approval_checklist:
+  content:
+    prerequisites_verifiable: false
+    assessment_strategy: ""
+    catalog_gap: "Existing Image Mode labs focus on platform engineers managing OS images at scale with security/compliance (e.g., 'Image Mode is the best mode' - 180min, operations-focused). This lab series targets application developers learning to package their applications with Image Mode. This is Part 1: development workflow with containers and volumes. Part 2 teaches production packaging as bootable images. Unique value: teaches the volume mount (mutable dev) vs COPY (immutable prod) transformation that ops-focused labs don't cover."
+    design_overview: "A beginner lab teaching application developers how to build LAMP applications in containers using volume mounts for iterative development. Students authenticate to Red Hat Container Registry, build a development container with MariaDB/Apache/PHP, create a database-backed PHP application, and test it. Emphasizes hands-on CLI workflow. Part 1 of 2-lab series; Part 2 covers production packaging with bootable containers."
+    module_summaries:
+      - title: "Build LAMP Development Container"
+        overview: "Authenticate to registry.redhat.io, build a LAMP stack container using UBI, configure MariaDB and Apache, create a PHP application with database connectivity, and test using volume-mounted development workflow."
+    rcars_overlap_pct: 0
+    rcars_top_matches: []
+    rejections: []
+
+  infra:
+    peak_environments: null
+    cost_per_run_est: ""
+    provisioning_time_est: ""
+    agnosticv_base_ci: ""
+    approved_by: ""
+    rejections: []

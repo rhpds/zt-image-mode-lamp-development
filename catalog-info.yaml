@@ -1,0 +1,30 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: zt-image-mode-lamp-development
+  title: "Build a LAMP Application Development Container"
+  description: "Authenticate to Red Hat Container Registry and build a database-backed LAMP application using containers and volume mounts for iterative development"
+  annotations:
+    ph.rhdp.io/content-type: lab
+    ph.rhdp.io/deployment-mode: self_published
+    ph.rhdp.io/created-at: "2026-10-06T12:00:00.000Z"
+  tags:
+    - image-mode
+    - lamp
+    - development
+    - containers
+    - rhel
+    - podman
+    - mariadb
+    - apache
+    - php
+spec:
+  type: content
+  lifecycle: experimental
+  owner: brthomas@redhat.com
+  system: publishing-house
+  links:
+    - url: https://github.com/rhpds/zt-image-mode-lamp-development
+      title: GitHub Repository
+      icon: github
